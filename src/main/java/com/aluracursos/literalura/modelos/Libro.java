@@ -29,7 +29,7 @@ public class Libro {
         this.descargas = libro.descargas();
     }
 
-    public void agregarAutor(RInfoLibro libro, AutorRepository repositorio) {
+    public void agregarAutor(RLibro libro, AutorRepository repositorio) {
         for (RAutor autor : libro.autor()) {
             Optional<Autor> autorBuscado = repositorio.findByNombreContainingIgnoreCase(autor.nombre());
             if (autorBuscado.isPresent()) {
@@ -43,7 +43,7 @@ public class Libro {
         }
     }
 
-    public void agregarIdioma(RInfoLibro libro, IdiomaRepository repositorio) {
+    public void agregarIdioma(RLibro libro, IdiomaRepository repositorio) {
         for (String idioma : libro.idiomas()) {
             Optional<Idioma> idiomaBuscado = repositorio.findByDescripcion(idioma);
             if (idiomaBuscado.isPresent()) {

@@ -20,10 +20,10 @@ public class Autor {
     public Autor() {}
 
     public Autor(RAutor autor) {
-        this.nombre = autor.nombre();
+        String[] nombreAutor = autor.nombre().split(",");
+        this.nombre = nombreAutor[1] + " " + nombreAutor[0];
         this.nacimiento = autor.nacimiento();
         this.fallecimiento = autor.fallecimiento();
-
     }
 
     public Long getId() {
