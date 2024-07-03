@@ -10,7 +10,9 @@ Esta aplicación permite guardar libros y trabajar con la información obtenida 
 
  ## Índice
  
- * [Funciones y demostración de la aplicación](#Funciones-y-demostración-de-la-aplicación)
+ * [Funciones](#Funciones)
+
+ * [Demostración](#demostracion)
  
  * [Como acceder al proyecto](#Como-acceder-al-proyecto)
  
@@ -18,8 +20,8 @@ Esta aplicación permite guardar libros y trabajar con la información obtenida 
  
 
 ## :hammer:[Características de la aplicación y demostración](#Características-de-la-aplicación-y-demostración)
-### Funciones
-* `obtenerMonedasDisponibles`: Genera una solicitud hacia la API para poder obtener el archivo JSON que indica todas las monedas o divisas de las cuales se rastrea constantemente los tipos de cambio y devuelve una lista con todas abreviaciones de cada divisa
+### [Funciones](#Funciones)
+* `agregarLibro`: Consulta a la API para saber si existe el libro buscado, obtiene el archivo JSON que contiene información general del libro
 
 * `obtenerEquivalenteDeUnaMoneda`: Recibe la moneda origen y la moneda destino para poder obtener la razón de cambio en la moneda destino y regresa esa tasa de cambio en una variable de tipo double
 
