@@ -107,8 +107,11 @@ public class Principal {
                 if (libro.titulo().toLowerCase().compareTo(titulo.toLowerCase()) == 0){
                     Libro libroEncontrado = new Libro(libro);
                     repositorioLibro.save(libroEncontrado);
-                    libroEncontrado.agregarAutor(libro,repositorioAutor);
-                    libroEncontrado.agregarIdioma(libro,repositorioIdioma);
+                    url = consulta.formatoCorrectoDeURL(url_base,"books/", Integer.toString(libro.id()) + "/");
+                    json = consulta.realizarConsulta(url);
+                    RInfoLibro info = convertirInfoLibros.transformarDatos(json,RInfoLibro.class);
+                    libroEncontrado.agregarAutor(info,repositorioAutor);
+                    libroEncontrado.agregarIdioma(info,repositorioIdioma);
                     repositorioLibro.save(libroEncontrado);
                     return libroEncontrado;
                 }
@@ -123,8 +126,11 @@ public class Principal {
             if (indice != -1) {
                 Libro libroEncontrado = new Libro(busquedas.libros().get(indice));
                 repositorioLibro.save(libroEncontrado);
-                libroEncontrado.agregarAutor(busquedas.libros().get(indice),repositorioAutor);
-                libroEncontrado.agregarIdioma(busquedas.libros().get(indice),repositorioIdioma);
+                url = consulta.formatoCorrectoDeURL(url_base,"books/", Integer.toString(busquedas.libros().get(indice).id()));
+                json = consulta.realizarConsulta(url);
+                RInfoLibro info = convertirDatos.transformarDatos(json, RInfoLibro.class);
+                libroEncontrado.agregarAutor(info,repositorioAutor);
+                libroEncontrado.agregarIdioma(info,repositorioIdioma);
                 return libroEncontrado;
             } else{
                 return null;
@@ -171,7 +177,7 @@ public class Principal {
         if (librosFiltrados == null) {
             System.out.println("ERROR: No se ha encontrado algún libro en ese idioma");
         } else {
-            System.out.println("Hay " + librosFiltrados.size() + " libro(s) disponibles en ese idioma");
+            System.out.println("Hay " + librosFiltrados.size() + " libros disponibles en ese idioma");
             librosFiltrados.forEach(System.out::println);
         }
     }
@@ -207,19 +213,17 @@ public class Principal {
     private void estadisticas() {
         List<Idioma> idiomas = repositorioIdioma.findAll();
         List<Long> descargas = new ArrayList<>();
-        List<Integer> cantidad = new ArrayList<>();
         long total = 0;
         for (Idioma idioma : idiomas) {
             List<Libro> libros = repositorioLibro.findByIdioma(idioma);
             for (Libro libro : libros) {
                 total += libro.getDescargas();
             }
-            cantidad.add(libros.size());
             descargas.add(total);
         }
         System.out.println("A continuación se presentan los idiomas disponibles y la cantidad de descargas total que hay por cada uno");
         for (int i = 0; i < idiomas.size(); i++) {
-            System.out.println(i + ". [" + idiomas.get(i).getDescripcion() + "] Libros Disponibles: " + cantidad.get(i) + " Descargas: " + descargas.get(i));
+            System.out.println(i + ". [" + idiomas.get(i).getDescripcion() + "] Descargas: " + descargas.get(i));
         }
     }
 }

@@ -20,7 +20,7 @@ public class Autor {
     public Autor() {}
 
     public Autor(RAutor autor) {
-        String[] nombreAutor = autor.nombre().split(",");
+        String [] nombreAutor = autor.nombre().split(",");
         this.nombre = nombreAutor[1] + " " + nombreAutor[0];
         this.nacimiento = autor.nacimiento();
         this.fallecimiento = autor.fallecimiento();
