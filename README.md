@@ -77,17 +77,24 @@ En esta segunda imagen se muestra el caso donde si encuentra el libro.
 
 **Paso 2. Descomprimir el programa**
 
-![image](https://github.com/RickSiphone/Challenge_ONE-ConversorDeMoneda/assets/156386884/30a554f5-e4fc-48de-add7-31c8dd69ce87)
+**Paso 3. Abrir la terminal de la computadora y desplazarse hasta la carpeta del proyecto**
 
-**Paso 3. Abrir el proyecto con alguna IDE como Intellij y ejecutar el programa**: 
 
-Tambien si prefieres solo descargar el JAR del programa, se encuentra en la siguiente ruta: "out/artifacts/Challenge_ONE_ConversorDeMoneda_jar"
+**Paso 4. Ejecutar el proyecto**: Debes ingresar el siguiente comando "mvnw spring-boot:run", en caso de no tener las dependencias instaladas se descargaran de forma automática y posteriormente el programa mostrará el menú de la sección de Demostración
+![image](https://github.com/RickSiphone/literalura/assets/156386884/49dfcaf8-2f4a-4597-8793-069ab20a10b7)
+
+NOTA: Es importante recordar que para el correcto funcionamiento ya debe existir la base de datos para que el programa pueda crear las tablas correspondientes y así poder realizar las inserciones o hacer consultas. Además de que dependiendo del DBMS se debe cambiar la dependencia Driver para poder trabajar con ese sistema manejador de bases de datos.
+
+
 
 
 ## 🧑‍💻[Tecnologías utilizadas](#Tecnologías-utilizadas)
 
 Para la realización de este proyecto se utilizó:
 * Lenguaje de programación: Java
-* JDK 20.0.1
+* JDK 17.0.10
 * IDE IntelliJ IDEA Community Edition 2024.1.2
-* Biblioteca externa para el manejo de solicitudes de API gson-2.11.0
+* Dependencia Jackson Databind V. 2.17.1
+* Dependencia Spring Data JPA
+* Dependencia PostgreSQL Driver
+* Para el manejo de la base de datos se utilizó PostgreSQL
