@@ -12,7 +12,7 @@ Esta aplicación permite guardar libros y trabajar con la información obtenida 
  
  * [Funciones](#Funciones)
 
- * [Demostración](#demostracion)
+ * [Demostración](#Demostracion)
  
  * [Como acceder al proyecto](#Como-acceder-al-proyecto)
  
@@ -39,7 +39,7 @@ Esta aplicación permite guardar libros y trabajar con la información obtenida 
 
 * `estadisticas`: Se recopila información sobre todos los libros que estan escritos en un mismo idioma. Muestra la cantidad de libros por idioma y la cantidad total de descargas.
 
-### [Demostración](#demostracion)
+### [Demostración](#Demostracion)
 Antes de mostrar un ejemplo sobre como se usa el programa, es importante mencionar que el programa no diferencia entre mayúsculas y minúsculas, por lo que puedes escribir como tu quieras.
 
 **Paso 1. Inicio del programa**: Al ejecutar el programa muestra un menú con 9 opciones diferentes y para poder interactuar con el menú se debe realizar mediante el teclado.
