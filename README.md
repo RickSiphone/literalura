@@ -73,7 +73,7 @@ En esta segunda imagen se muestra el caso donde si encuentra el libro.
 
 **Paso 1. Descargar el proyecto**
 
-![Captura de pantalla 2024-06-10 164415](https://github.com/RickSiphone/Challenge_ONE-ConversorDeMoneda/assets/156386884/e312adcf-9072-4565-9db4-56c6fb49ef0b)
+![image](https://github.com/RickSiphone/literalura/assets/156386884/178f5da5-6e62-48f3-bbac-9f597f7d33fa)
 
 **Paso 2. Descomprimir el programa**
 
